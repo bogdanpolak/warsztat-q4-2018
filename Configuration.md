@@ -8,16 +8,22 @@
 	* **MAILING-DATABASE.IB** - baza InterBase (wersja ODS 15 - InterBase XE7 lub nowszy)
 	* **MAILING-DATABASE.FDB** - baza Firebird (wersja 2.5)
 2. (jeśli plik bazy nie działa poprawnie) Stworzenie pustej bazy danych InterBase / Firebird
-	* Artykuł w serwise reedit.com:
+	* Artykuł w serwisie reedit.com:
 		* [serwer InterBase](https://www.reddit.com/user/BogdanPolakBSC/comments/9cymje/)
 		* [serwer Firebird](https://www.reddit.com/user/BogdanPolakBSC/comments/9cyrh2/)
 	* Skrypt tworzący bazę pustą bazę danych
 		```sql
 		create database '<folder z danymi>\MAILING-DATABASE.FDB' default character set UTF_8;
 		```
-3. Dodanie **definicji połączenia FireDAC** do stworzonej w kroku powyżej bazy.
-	* IB_MailingDB - InterBase 
-	* FB_MailingDB - Firebird
+3. Dodanie **definicji połączenia FireDAC** do bazy
+	* W środowisku Delphi - Przez ```Data Explorer```
+		* menu kontekstowe na odpowiednim serwerze (InterBase lub Firebird) w grupie FireDAC
+		* ```Add New Connection ...```
+	* Przez ```FireDAC Explorer```
+	* **Uwaga!!** Przy ustawianiu parametrów połączenia proszę ustawić tablicę znaków: Character Set = ```UTF8```
+	* Nazwa definicji połączenia
+		* IB_MailingDB - InterBase 
+		* FB_MailingDB - Firebird
 4. (można pominąć) Sprawdzenie czy połączenie jest Unicode-owe.
 	* Ustawienie ```CHARACTER SET = UTF8``` w połączeniach FireDAC oraz w konsoli administracyjnej
 	* Uruchomienie skryptu (menu [Tools] -> [FireDAC Explorer] lub [FireDAC Connection Editor] -> zakładka [SQL Script]:
