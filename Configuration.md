@@ -8,6 +8,9 @@
         * Artykuł w serwise reedit.com:
             * [serwer InterBase](https://www.reddit.com/user/BogdanPolakBSC/comments/9cymje/)
             * [serwer Firebird](https://www.reddit.com/user/BogdanPolakBSC/comments/9cyrh2/)
+			```sql
+			create database '<ścieżka do pliku fdb>' default character set UTF_8;
+			```
     3. Dodanie definicji połączenia FireDAC do stworzonej w kroku powyżej bazy.
         * IB_MailingDB 
         * FB_MailingDB - Firebird

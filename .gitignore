@@ -6,6 +6,10 @@
 
 .DS_Store
 
+# ########## Parallers Destop hidden meta links
+
+._*
+
 # ########## Delphi project file
 # (*.dproj) Delphi Project file
 # (*.cbproj) C++Builder Project file
