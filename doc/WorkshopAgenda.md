@@ -12,7 +12,7 @@ W ciągu ostatnich dwóch dekad narzędzia programistyczne bardzo się zmieniły
 
 **BSC Polska** zaprasza programistów Delphi na *darmowe warsztaty*, podczas których pokażemy jak w praktyce używać nowe możliwości języka Delphi oraz jak zorganizować pracę zespołu, wprowadzając: przeglądy kodu źródłowego, automatyczne testy, lokalne i wspólne repozytorium kodu, jak rejestrować drobne zmiany, pracować w parach oraz dzielić duże bloki kodu na mniejsze. To wszystko zobaczycie w praktyce w czasie prezentacji - to jednak nie wszystko, równocześnie będziemy starali się zadbać by efektem naszej pracy był czysty i solidny kod źródłowy.
 
-Zapraszamy Państwa na drugą edycję warsztatów. Dwa pierwsze pozwoliły nam zgromadzić bardzo cenne doświadczenia, które wpłynęły na rozwinięcie omawianego materiału oraz usunięcie elementów zajmujących wiele cennego czasu warsztatowego. Dlatego warto przyjść drugi raz na ten warsztat nawet jeśli już wcześniej, ww wrześniu, byliście w Warszawie lub w Katowicach.
+Zapraszamy Państwa na drugą edycję warsztatów. Dwa pierwsze pozwoliły nam zgromadzić bardzo cenne doświadczenia, które wpłynęły na rozwinięcie omawianego materiału oraz usunięcie elementów zajmujących wiele cennego czasu warsztatowego. Z tego powodu warto przyjść drugi raz na ten warsztat, nawet jeśli już wcześniej, byliście w Warszawie lub w Katowicach (we wrześniu).
 
 
 | DATA | GODZINA | MIASTO | MIEJSCE |
