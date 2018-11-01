@@ -34,7 +34,5 @@ Uczestnik warsztatów może wybrać jeden z dwóch trybów pracy (jedną z ról)
 * **Obserwator** będzie mógł w spokoju śledzić pracę trenera oraz aktywistów, dzięki temu nie przeoczy żadnych ważnych treści.
 
 * **Aktywny programista** będzie mógł w praktyce wypróbować nowe umiejętności, jednak musi przygotować swoje stanowisko pracy i zabrać na warsztaty tak przygotowany laptop. Uwaga! Nie gwarantujemy możliwości wsparcia każdego uczestnika przez trenera, to nie jest szkolenie!
-
 Przygotowania do warsztatu są opisane w warsztatowym repozytorium na GitHub:
-
 https://github.com/bogdanpolak/warsztat-q4-2018/blob/master/doc/Configuration.md
