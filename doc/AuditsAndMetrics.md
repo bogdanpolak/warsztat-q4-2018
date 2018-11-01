@@ -29,7 +29,7 @@ ObjRepos\en\QA\audits\docs\Delphi\
 ### Wybrane Metryki
 
 * CC = Cyclomatic Complexity (CC)
-    * Number of cycles in the measured method. This measure represents the cognitive complexity of the class. It **counts the number of possible paths through an algorithm** by counting the number of distinct regions on a flowgraph, meaning the number of if, for, and while statements in the operation's body. Case labels for switch statements are counted if the Case as branch property is activated. (introduced by McCabe in 1976)
+    * Number of cycles in the measured method. This measure represents the cognitive complexity of the class. It **counts the number of possible paths through an algorithm** by counting the number of distinct regions on a flow-graph, meaning the number of if, for, and while statements in the operation's body. Case labels for switch statements are counted if the Case as branch property is activated. (introduced by McCabe in 1976)
 * CR = Comment Ratio
     * Counts the **ratio of comments to total lines of code** (comments are included in the code count). Comment = documentation and/or implementation one. 
     * You can also specify which type of comments to use for the ratio.
@@ -39,7 +39,7 @@ ObjRepos\en\QA\audits\docs\Delphi\
     * Number of lines of code, including comments and white-lines.
 * FO = FanOut
     * Number of **reference types that are used** by class. Counts types in field declarations, formal parameters, return types, throws declarations and local variables. 
-        * Simple types and supertypes are not counted.
+        * Simple types and super-types are not counted.
 * MNOL = Maximum Number Of Levels
     * Maximum **depth of if**, for and while branches in the bodies of methods. Logical units with a high number of nested levels might need implementation simplification and process improvements, because groups that contain more than seven pieces of information are increasingly harder for people to understand in problem solving.
 * MNOP = Maximum Number Of Parameters
@@ -52,7 +52,7 @@ ObjRepos\en\QA\audits\docs\Delphi\
 Metryki dla programistów OOP:
 
 * CBO = Coupling Between Objects
-    * Represents the number of other classes to which a class is coupled to. Counts the number of reference types that are used in field declarations, formal parameters, return types, throws declarations, local variables, and types from which field and method selections are made. Primitive types, types from System.Collections namespace and supertypes are not counted.
+    * Represents the number of other classes to which a class is coupled to. Counts the number of reference types that are used in field declarations, formal parameters, return types, throws declarations, local variables, and types from which field and method selections are made. Primitive types, types from System.Collections namespace and super-types are not counted.
     * Excessive coupling between objects is detrimental to modular design and prevents reuse. The more independent a class is, the easier it is to reuse it in another application. In order to improve modularity and promote encapsulation, inter-object class coupling should be kept to a minimum. The larger the number of coupling, the higher the sensitivity to changes in other parts of the design, and therefore maintenance is more difficult. A measure of coupling is useful to determine how complex the testing of various parts of a design is likely to be. The higher the inter-object class coupling, the more rigorous the testing needs to be.
 * DOIH = Depth Of Inheritance Hierarchy
     * **The length of the inheritance chain** from the root of the inheritance tree to the measured class is the DOIH metric for the class.
