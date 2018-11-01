@@ -1,13 +1,10 @@
 # ########## Open Console File
-
 /OpenConsole.bat
-
+# ########## Visual Studio Code internal files
+.vscode/*
 # ########## OS X hidden file index data
-
 .DS_Store
-
 # ########## Parallers Destop hidden meta links
-
 ._*
 
 # ########## Delphi project file

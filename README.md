@@ -1,32 +1,23 @@
-﻿# Project: VCL Mailing List
+﻿# Warsztaty
 
-Mailing List is sample Delphi VCL (SQL client-server) project used for demo purposes during BSC Delphi Workshop 09-2018 in Warsaw and Katowice. Warning! This is an exceptionally ugly and dirty code project. This was the purpose of its creation. During the workshops, it will be modernized.
+## Nowoczesne Programowanie w Delphi - Druga Edycja 
 
-### Cel projektu
-
-Projekt powstał na potrzeby warsztatu: "Nowoczesne programowanie w Delphi". Jest to wyjątkowo brzydki projekt i taki miał być cel jego powstania. W trakcie warszatów będzie on unowocześniany.
+Repozytorium powstało na potrzeby warsztatu: "Nowoczesne programowanie w Delphi - Druga Edycja". Zawiera zbiór materiałów wykorzystywanych w czasie warsztatów. Zebrane tutaj materiały są przeznaczone dla uczestników warsztatów. Repozytorium zawiera przykładowy projekt VCL, napisany w sposób w miarę poprawny lecz mało staranny. W trakcie warsztatów projekt będzie unowocześniany.
 
 ### Agenda warsztatu
 
-* [Agenda](./WorkshopAgenda.md)
+* [Agenda](./doc/WorkshopAgenda.md)
 
 ### Przygotowanie do warsztatów
 
-* [Konfiguracja stanowiska pracy](./Configuration.md)
-
-### Hasła warsztatów
-
-* Przestań być dinozaurem - nadeszła nowa epoka!
-* Nie jesteś sam! Programowanie to gra zespołowa.
-* Zero tolerancji dla ```warning-ów```!
-* Wyrzuć gryzonia!
+* [Konfiguracja stanowiska pracy](./doc/Configuration.md)
 
 ### Materiały dla uczestników
 
-* [Nauka Git-a](./GitLearn.md)
+* [Nauka Git-a](./doc/GitLearn.md)
 
-* [Narzędzia wspomagające programistę](./DelphiTools.md)
+* [Narzędzia wspomagające programistę](./doc/DelphiTools.md)
 
-* [Dobre praktyki programisty](./GoodPractices.md)
+* [Dobre praktyki programisty](./doc/GoodPractices.md)
 
-* [Konwencja nazw identyfikatorów](./NamingConvetion.md)
+* [Konwencja nazw identyfikatorów](./doc/NamingConvetion.md)
