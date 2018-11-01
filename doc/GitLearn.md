@@ -2,7 +2,7 @@
 
 ### Repozytorium Git-a
 
-![Repozytorium Git](./assets/images/g01-repozytorium.png)
+![Repozytorium Git](./../assets/images/g01-repozytorium.png)
 
 Repozytorium Git-a zawiera zbiór rewizji (wersji historycznych), a każda rewizja to zbiór migawek. Migawka zawiera w całości wszystkie zmienione lub nowo dodane pliki oraz wskaźniki do aktualnej wersji wszsytkich nie zmienionych plików. W efekcie repozytorium Git-a staje się bardzo wydajnym systemem plików z możliwością optymalnego zamiętania ich wcześniejszych wersji. Dzięki takiemu rozwiązaniu każda rewizja zawiera pełny obraz plików. Systemy wersjonowania kodu starszej generacji (takie jak Subversion i CVS)
 
@@ -23,7 +23,7 @@ Pozostałe kluczowe obiekty w repozytorium Git-a to wskaźniki. Jest ich kilka r
 ***
 
 ### Zdalne repozytorium
-![Zdalne repozytorium](./assets/images/g02-zdalne.png)
+![Zdalne repozytorium](./../assets/images/g02-zdalne.png)
 
 Git jest rozproszonym systemem wersjonowania kodu źródłowego, czyli programista zazwyczaj korzysta ze swojej własnej kopii repozytorium głównego. Lokalne repozytorium jest w pełni autonomiczną kopią repozytorium Git-a. Dzięki takiemu rozwiazaniu mozliwe jest zatwierdzanie zmian bez połączenia sieciowego (sieć lokalna lub sieć Internet). Repozytorium lokalne tworzone jest na dwa sposoby: 
 * poleceniem ```git init``` - powstaje puste repozytorium w katalogu, w którym wydano takie polecenie.
@@ -34,19 +34,19 @@ Zmiany umieszczone w repozytorium lokalnym można w każdym momencie zsynchroniz
 ***
 
 ### Delphi i GitHub
-![Delphi i GitHub](./assets/images/g03-delphi-github.png)
+![Delphi i GitHub](./../assets/images/g03-delphi-github.png)
 
 Środowisko Delphi zawiera integrację z Git-em nazywaną VersionInsight. Rozszerzenie to pozwala na wydawanie wielu poleceń git-a, choć w praktyce najlepiej sprawdza się w czasie dodawania zmian do repozytorium lokalnego
 
 ***
 
 ### Fork na GitHub
-![Fork na GitHub](./assets/images/g04-fork-github.png)
+![Fork na GitHub](./../assets/images/g04-fork-github.png)
 
 ***
 
 ### PullRequest na GitHub
-![PullRequest na GitHub](./assets/images/g05-pull-request-github.png)
+![PullRequest na GitHub](./../assets/images/g05-pull-request-github.png)
 
 ### Symulatory Git-a
 
