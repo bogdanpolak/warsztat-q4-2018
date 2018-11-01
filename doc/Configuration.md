@@ -80,10 +80,10 @@
 2. Ustawienie opcji IDE dla Git-a:
 	* Git Executable
 	* Remote authentication data
-	![](./assets/images/opcje-IDE-dla-Gita.png)
+	![](./../assets/images/opcje-IDE-dla-Gita.png)
 3. Instalacja ChromeTabs przez GetIt Package Manager:
 	* menu: Tools -> GetIt Package Manager
-	* ![](./assets/images/getit-manager.png)
+	* ![](./../assets/images/getit-manager.png)
 4. Uruchomienie projektu sklonowanego w Delphi
 	* Załadowanie pliku ```dpr``` z folderu ```project```
 	* Skompilowanie projektu (zignorowanie wszystkich zbędnych properites)
