@@ -29,11 +29,11 @@ Zapraszamy Państwa na drugą edycję warsztatów. Dwa pierwsze pozwoliły nam z
 ## Przygotowania do warsztatu
 
 Uczestnik warsztatów może wybrać jeden z dwóch trybów pracy (jedną z ról):
-**obserwartor** lub **aktywny programista**. Uczestniczenie w warsztatach w każdej z obu ról ma sens. Jednak zachęcamy do aktywnego uczestnictwa, choć wymaga to więcej pracy. 
+**obserwator** lub **aktywny programista**. Uczestniczenie w warsztatach w każdej z obu ról ma sens. Jednak zachęcamy do aktywnego uczestnictwa, choć wymaga to więcej pracy. 
 
-Jeśli zdecydujesz się być obserwatorem to nie musisz zabierać swojego komputera, ani przygotowywać stanowiska do pracy. Będziesz mógł w spokoju obserwować pracę trenera oraz aktywistów, dzięki temu nie przegapisz żadnych ważnych treści.
+* **Obserwator** będzie mógł w spokoju śledzić pracę trenera oraz aktywistów, dzięki temu nie przeoczy żadnych ważnych treści.
 
-Aktywni programiści muszą przygotować swoje stanowisko pracy i zabrać na warsztaty swoje laptopy. Jednak nie mają gwarancji, że wszystko uda im się zrobić, to nie jest szkolenie!
+* **Aktywny programista** będzie mógł w praktyce wypróbować nowe umiejętności, jednak musi przygotować swoje stanowisko pracy i zabrać na warsztaty tak przygotowany laptop. Uwaga! Nie gwarantujemy możliwości wsparcia każdego uczestnika przez trenera, to nie jest szkolenie!
 
 Przygotowania do warsztatu są opisane w warsztatowym repozytorium na GitHub:
 
