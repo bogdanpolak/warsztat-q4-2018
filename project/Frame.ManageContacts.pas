@@ -28,7 +28,7 @@ implementation
 
 {$R *.dfm}
 
-uses Data.ManageContacts;
+uses Data.ManageContacts, Helper.DBGrid;
 
 { TFrameManageContacts }
 
@@ -56,6 +56,7 @@ begin
   DBGrid1.DataSource := TDataSource.Create(self);
   DBGrid1.DataSource.DataSet := DataModuleManageContacts.dsContacts;
   DataModuleManageContacts.dsContacts.Open();
+  DBGrid1.AutoSizeColumns();
 end;
 
 end.

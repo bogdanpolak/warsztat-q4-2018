@@ -19,7 +19,8 @@ uses
   Frame.ManageContacts in 'Frame.ManageContacts.pas' {FrameManageContacts: TFrame},
   Frame.Welcome in 'Frame.Welcome.pas' {FrameWelcome: TFrame},
   Dialog.CreateDatabaseStructure in 'database-build\Dialog.CreateDatabaseStructure.pas' {FormDBScript},
-  Consts.DDL.Interbase in 'database-build\Consts.DDL.Interbase.pas';
+  Consts.DDL.Interbase in 'database-build\Consts.DDL.Interbase.pas',
+  Helper.DBGrid in 'Helper.DBGrid.pas';
 
 {$R *.res}
 
