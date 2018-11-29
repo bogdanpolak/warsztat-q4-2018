@@ -93,3 +93,17 @@
 			* **FB_MailingDB** - dla bazy Firebird
 	* Uruchomienie i sprawdzenie działania
 
+## Errata
+
+1. **BŁĄD:** `Resource PngImage_1 not found.`
+
+	* Po uruchomieniu projektu w RAD Studio może pojawić się błąd informujący o braku zasobu `PngImage_1` :
+	![Ekran błędu po uruchomieniu projektu](./resources/errata-error.png)
+	
+	* Należy dodać zasób do projektu:
+		* W RAD Studio otwieramy: `Project` => `Resources and Images ...`
+		* Dodajemy `[ Add ... ]` grafikę PNG z podkatalogu `project\resources\` plik `email-1345971_640.png`
+		* Resztę opcji pozostawiamy bez zmian i zatwierdzamy dodanie `[ OK ]`
+	
+	* Okno Resources fo MailingManager.dproj powinno wyglądać tak:
+	![Naprawa błędu](./resources/errata-done.png)
