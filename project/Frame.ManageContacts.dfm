@@ -18,9 +18,6 @@ object FrameManageContacts: TFrameManageContacts
     Padding.Right = 3
     Padding.Bottom = 3
     TabOrder = 0
-    ExplicitLeft = 208
-    ExplicitTop = 184
-    ExplicitWidth = 185
     object btnConfirmContact: TButton
       AlignWithMargins = True
       Left = 7
@@ -77,5 +74,11 @@ object FrameManageContacts: TFrameManageContacts
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+  end
+  object tmrFrameReady: TTimer
+    Interval = 1
+    OnTimer = tmrFrameReadyTimer
+    Left = 32
+    Top = 112
   end
 end

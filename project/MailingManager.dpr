@@ -6,6 +6,8 @@ program MailingManager;
 
 
 
+{$R *.dres}
+
 uses
   Vcl.Forms,
   Form.Main in 'Form.Main.pas' {FormMain},

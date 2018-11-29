@@ -15,8 +15,10 @@ type
     DBGrid1: TDBGrid;
     btnShowUnregistred: TButton;
     btnRegisterAgain: TButton;
+    tmrFrameReady: TTimer;
     procedure btnConfirmContactClick(Sender: TObject);
     procedure btnUnregisterContactClick(Sender: TObject);
+    procedure tmrFrameReadyTimer(Sender: TObject);
   private
   public
     constructor Create(AOwner: TComponent); override;
@@ -44,6 +46,16 @@ end;
 procedure TFrameManageContacts.btnUnregisterContactClick(Sender: TObject);
 begin
   { TODO: Wyrejestrowanie kontaktu }
+end;
+
+
+
+procedure TFrameManageContacts.tmrFrameReadyTimer(Sender: TObject);
+begin
+  tmrFrameReady.Enabled := false;
+  DBGrid1.DataSource := TDataSource.Create(self);
+  DBGrid1.DataSource.DataSet := DataModuleManageContacts.dsContacts;
+  DataModuleManageContacts.dsContacts.Open();
 end;
 
 end.
