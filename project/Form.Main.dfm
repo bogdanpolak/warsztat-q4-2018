@@ -26,71 +26,90 @@ object FormMain: TFormMain
     Height = 523
     Align = alLeft
     Caption = ' Zadania '
+    Padding.Top = 8
     TabOrder = 0
+    ExplicitLeft = 10
+    object Bevel1: TBevel
+      AlignWithMargins = True
+      Left = 5
+      Top = 92
+      Width = 188
+      Height = 2
+      Margins.Top = 7
+      Margins.Bottom = 7
+      Align = alTop
+      ExplicitTop = 80
+    end
     object btnImportContacts: TButton
       AlignWithMargins = True
       Left = 5
-      Top = 18
+      Top = 104
       Width = 188
       Height = 25
       Align = alTop
       Caption = 'Import Kontakt'#243'w'
       TabOrder = 0
       OnClick = btnImportContactsClick
+      ExplicitLeft = 7
+      ExplicitTop = 111
     end
     object btnImportUnregistered: TButton
       AlignWithMargins = True
       Left = 5
-      Top = 111
+      Top = 135
       Width = 188
       Height = 25
       Align = alTop
       Caption = 'btnImportUnregistered'
       TabOrder = 1
+      OnClick = btnImportUnregisteredClick
+      ExplicitTop = 111
     end
     object btnListManager: TButton
       AlignWithMargins = True
       Left = 5
-      Top = 80
+      Top = 57
       Width = 188
       Height = 25
       Align = alTop
       Caption = 'btnListManager'
       TabOrder = 2
+      OnClick = btnListManagerClick
+      ExplicitTop = 80
     end
     object btnManageContacts: TButton
       AlignWithMargins = True
       Left = 5
-      Top = 49
+      Top = 26
       Width = 188
       Height = 25
       Align = alTop
       Caption = 'Zarz'#261'dzanie Kontaktami'
       TabOrder = 3
       OnClick = btnManageContactsClick
+      ExplicitTop = 49
     end
-    object ButtonCreateDatabase: TButton
+    object btnCreateDatabase: TButton
       AlignWithMargins = True
       Left = 5
-      Top = 157
+      Top = 493
       Width = 188
       Height = 25
       Margins.Top = 18
-      Align = alTop
-      Caption = 'ButtonCreateDatabase'
+      Align = alBottom
+      Caption = 'btnCreateDatabase'
       TabOrder = 4
-      OnClick = ButtonCreateDatabaseClick
-      ExplicitTop = 142
+      OnClick = btnCreateDatabaseClick
+      ExplicitTop = 157
     end
   end
   object pnMain: TPanel
     AlignWithMargins = True
     Left = 211
     Top = 2
-    Width = 664
-    Height = 526
+    Width = 518
+    Height = 487
     Margins.Top = 0
-    Align = alClient
     BevelOuter = bvNone
     Caption = 'pnMain'
     TabOrder = 1
@@ -98,7 +117,7 @@ object FormMain: TFormMain
       AlignWithMargins = True
       Left = 3
       Top = 5
-      Width = 658
+      Width = 512
       Height = 30
       Margins.Top = 5
       Margins.Bottom = 0
@@ -424,11 +443,12 @@ object FormMain: TFormMain
       LookAndFeel.ScrollButtons.Arrow.Disabled.OutlineAlpha = 200
       Align = alTop
       TabOrder = 0
+      ExplicitWidth = 658
     end
   end
   object grboxConfiguration: TGroupBox
-    Left = 241
-    Top = 186
+    Left = 233
+    Top = 154
     Width = 202
     Height = 271
     Caption = 'grboxConfiguration'

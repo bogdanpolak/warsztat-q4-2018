@@ -2,6 +2,9 @@
 
 interface
 
+// TODO: wyłączenie Warninig-ów W1002 Symbol %s is specific to a platform
+// {$WARN SYMBOL_PLATFORM OFF}
+
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes,

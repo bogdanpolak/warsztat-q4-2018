@@ -201,7 +201,7 @@ object FrameImport: TFrameImport
     Top = 104
   end
   object dsQueryCurrEmails: TFDQuery
-    Connection = MainDM.FDConnection1
+    Connection = DataModuleMain.FDConnection1
     FetchOptions.AssignedValues = [evMode]
     FetchOptions.Mode = fmAll
     Left = 224
@@ -229,11 +229,12 @@ object FrameImport: TFrameImport
     end
   end
   object FDQuery1: TFDQuery
+    Connection = DataModuleMain.FDConnection1
     Left = 224
     Top = 160
   end
   object FDQuery2: TFDQuery
-    Connection = MainDM.FDConnection1
+    Connection = DataModuleMain.FDConnection1
     Left = 224
     Top = 208
   end

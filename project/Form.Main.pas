@@ -29,20 +29,22 @@ type
     Label1: TLabel;
     Label2: TLabel;
     edtDBVersion: TEdit;
-    ButtonCreateDatabase: TButton;
-    procedure btnImportContactsClick(Sender: TObject);
+    btnCreateDatabase: TButton;
+    Bevel1: TBevel;
     procedure btnManageContactsClick(Sender: TObject);
+    procedure btnImportContactsClick(Sender: TObject);
     procedure ChromeTabs1ButtonCloseTabClick(Sender: TObject; ATab: TChromeTab;
       var Close: Boolean);
     procedure ChromeTabs1Change(Sender: TObject; ATab: TChromeTab;
       TabChangeType: TTabChangeType);
     procedure FormCreate(Sender: TObject);
     procedure tmrIdleTimer(Sender: TObject);
-    procedure ButtonCreateDatabaseClick(Sender: TObject);
+    procedure btnCreateDatabaseClick(Sender: TObject);
+    procedure btnImportUnregisteredClick(Sender: TObject);
+    procedure btnListManagerClick(Sender: TObject);
   private
     isDeveloperMode: Boolean;
     procedure HideAllChildFrames(AParenControl: TWinControl);
-    function OpenFrameAsChromeTab(Frame: TFrameClass): TChromeTab;
     { Private declarations }
   public
     { Public declarations }
@@ -77,81 +79,13 @@ begin
       (AParenControl.Controls[i] as TFrame).Visible := False;
 end;
 
-function TFormMain.OpenFrameAsChromeTab(Frame: TFrameClass): TChromeTab;
-var
-  frm: TFrame;
-begin
-  Result := nil;
-  { TODO: Dodać kontrolę otwierania tej samej zakładki po raz drugi }
-  // Błąd zgłoszony. github #2
-  { DONE: Powtórka: COPY-PASTE }
-  { DONE : Wydziel metodę OpenFrameAsChromeTab (TFrame) }
-
-  HideAllChildFrames(pnMain);
-
-  frm := Frame.Create(pnMain);
-  frm.Parent := pnMain;
-  frm.Visible := True;
-  frm.Align := alClient;
-
-  Result := ChromeTabs1.Tabs.Add;
-  Result.Data := frm;
-end;
-
-procedure TFormMain.btnImportContactsClick(Sender: TObject);
-var
-  frm: TChromeTab;
-begin
-  { DONE: Powtórka: COPY-PASTE }
-  frm := OpenFrameAsChromeTab(TFrameImport);
-  frm.Caption := (Sender as TButton).Caption;
-end;
-
-procedure TFormMain.btnManageContactsClick(Sender: TObject);
-var
-  frm: TChromeTab;
-begin
-  { DONE: Powtórka: COPY-PASTE }
-  frm := OpenFrameAsChromeTab(TFrameManageContacts);
-  frm.Caption := (Sender as TButton).Caption;
-end;
-
-procedure TFormMain.ButtonCreateDatabaseClick(Sender: TObject);
-begin
-  Dialog.CreateDatabaseStructure.TFormDBScript.Execute;
-end;
-
-procedure TFormMain.ChromeTabs1ButtonCloseTabClick(Sender: TObject;
-  ATab: TChromeTab; var Close: Boolean);
-var
-  obj: TObject;
-begin
-  obj := TObject(ATab.Data);
-  (obj as TFrame).Free;
-end;
-
-procedure TFormMain.ChromeTabs1Change(Sender: TObject; ATab: TChromeTab;
-  TabChangeType: TTabChangeType);
-var
-  obj: TObject;
-begin
-  if Assigned(ATab) then
-  begin
-    obj := TObject(ATab.Data);
-    if (TabChangeType = tcActivated) and Assigned(obj) then
-    begin
-      HideAllChildFrames(pnMain);
-      (obj as TFrame).Visible := True;
-    end;
-  end;
-end;
-
 procedure TFormMain.FormCreate(Sender: TObject);
 var
   sProjFileName: string;
   ext: string;
 begin
   pnMain.Caption := '';
+  pnMain.Align := alClient;
   { TODO: Powtórka: COPY-PASTE }
   { TODO: Poprawić rozpoznawanie projektu: dpr w bieżącym folderze }
 {$IFDEF DEBUG}
@@ -179,14 +113,20 @@ begin
   tmr1 := (Sender as TTimer);
   isFirstTime := (tmr1.Tag = 0);
   tmr1.Tag := tmr1.Tag + 1;
+  // TODO: Użyć osobny timier tmrFormReady na cały kod z `if isFirstTime then`
   if isFirstTime then
   begin
-    { DONE: Powtórka: COPY-PASTE }
-    tab := OpenFrameAsChromeTab(TFrameWelcome);
+    // TODO: Już gdzieś widziałem takie kod ... do refaktoringu xD
+    HideAllChildFrames(pnMain);
+    frm := TFrameWelcome.Create(pnMain);
+    frm.Parent := pnMain;
+    frm.Visible := True;
+    frm.Align := alClient;
+    tab := ChromeTabs1.Tabs.Add;
+    tab.Data := frm;
     tab.Caption := SWelcomeScreen;
-    // -- koniec bloku powtórki
+    // --
     self.Caption := self.Caption + ' - ' + edtAppVersion.Text;
-    { DONE: Sprawdź wersję bazy danych czy pasuje do aplikacji }
     DatabaseNumber := StrToInt(edtDBVersion.Text);
     { TODO: Wydziel metodę: verifyDatabaseVersion(expectedVersionNr) }
     // Połączenie z bazą i porównanie DatabaseNumber z VersionNr
@@ -224,6 +164,78 @@ begin
       btnImportContacts.Click;
     if rbtFrameManageContacts.Checked then
       btnManageContacts.Click;
+  end;
+end;
+
+procedure TFormMain.btnManageContactsClick(Sender: TObject);
+var
+  frm: TFrameManageContacts;
+  tab: TChromeTab;
+begin
+  // TODO: Znajdź powtórzenia
+  // extract: OpenFrameAsChromeTab(FrameClass: TFrameClass; const TabCaption: String): TChromeTab;
+  HideAllChildFrames(pnMain);
+  frm := TFrameManageContacts.Create(pnMain);
+  frm.Parent := pnMain;
+  frm.Visible := True;
+  frm.Align := alClient;
+  tab := ChromeTabs1.Tabs.Add;
+  tab.Data := frm;
+  tab.Caption := (Sender as TButton).Caption;
+end;
+
+procedure TFormMain.btnListManagerClick(Sender: TObject);
+begin
+  // TODO: not implemented
+end;
+
+procedure TFormMain.btnImportUnregisteredClick(Sender: TObject);
+begin
+  // TODO: Not Implemented
+end;
+
+procedure TFormMain.btnImportContactsClick(Sender: TObject);
+var
+  frm: TFrameImport;
+  tab: TChromeTab;
+begin
+  HideAllChildFrames(pnMain);
+  frm := TFrameImport.Create(pnMain);
+  frm.Parent := pnMain;
+  frm.Visible := True;
+  frm.Align := alClient;
+  tab := ChromeTabs1.Tabs.Add;
+  tab.Data := frm;
+  tab.Caption := (Sender as TButton).Caption;
+end;
+
+procedure TFormMain.btnCreateDatabaseClick(Sender: TObject);
+begin
+  Dialog.CreateDatabaseStructure.TFormDBScript.Execute;
+end;
+
+procedure TFormMain.ChromeTabs1ButtonCloseTabClick(Sender: TObject;
+  ATab: TChromeTab; var Close: Boolean);
+var
+  obj: TObject;
+begin
+  obj := TObject(ATab.Data);
+  (obj as TFrame).Free;
+end;
+
+procedure TFormMain.ChromeTabs1Change(Sender: TObject; ATab: TChromeTab;
+  TabChangeType: TTabChangeType);
+var
+  obj: TObject;
+begin
+  if Assigned(ATab) then
+  begin
+    obj := TObject(ATab.Data);
+    if (TabChangeType = tcActivated) and Assigned(obj) then
+    begin
+      HideAllChildFrames(pnMain);
+      (obj as TFrame).Visible := True;
+    end;
   end;
 end;
 
