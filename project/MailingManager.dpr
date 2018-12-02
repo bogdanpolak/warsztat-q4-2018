@@ -6,6 +6,8 @@ program MailingManager;
 
 
 
+
+
 {$R *.dres}
 
 uses
@@ -20,7 +22,8 @@ uses
   Frame.Welcome in 'Frame.Welcome.pas' {FrameWelcome: TFrame},
   Dialog.CreateDatabaseStructure in 'database-build\Dialog.CreateDatabaseStructure.pas' {FormDBScript},
   Consts.DDL.Interbase in 'database-build\Consts.DDL.Interbase.pas',
-  Helper.DBGrid in 'Helper.DBGrid.pas';
+  Helper.DBGrid in 'Helper.DBGrid.pas',
+  Frame.ListManager in 'Frame.ListManager.pas' {FrameListManager: TFrame};
 
 {$R *.res}
 

@@ -60,7 +60,7 @@ implementation
 uses
   FireDAC.Stan.Error,
   Data.Main, Frame.ImportContacts, Frame.Welcome,
-  Frame.ManageContacts, Dialog.CreateDatabaseStructure;
+  Frame.ManageContacts, Dialog.CreateDatabaseStructure, Frame.ListManager;
 
 const
   SQL_SELECT_DatabaseVersion = 'SELECT versionnr FROM DBInfo';
@@ -185,8 +185,18 @@ begin
 end;
 
 procedure TFormMain.btnListManagerClick(Sender: TObject);
+var
+  frm: TFrameListManager;
+  tab: TChromeTab;
 begin
-  // TODO: not implemented
+  HideAllChildFrames(pnMain);
+  frm := TFrameListManager.Create(pnMain);
+  frm.Parent := pnMain;
+  frm.Visible := True;
+  frm.Align := alClient;
+  tab := ChromeTabs1.Tabs.Add;
+  tab.Data := frm;
+  tab.Caption := (Sender as TButton).Caption;
 end;
 
 procedure TFormMain.btnImportUnregisteredClick(Sender: TObject);

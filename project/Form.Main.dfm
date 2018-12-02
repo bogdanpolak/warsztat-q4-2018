@@ -28,7 +28,6 @@ object FormMain: TFormMain
     Caption = ' Zadania '
     Padding.Top = 8
     TabOrder = 0
-    ExplicitLeft = 10
     object Bevel1: TBevel
       AlignWithMargins = True
       Left = 5
@@ -50,8 +49,6 @@ object FormMain: TFormMain
       Caption = 'Import Kontakt'#243'w'
       TabOrder = 0
       OnClick = btnImportContactsClick
-      ExplicitLeft = 7
-      ExplicitTop = 111
     end
     object btnImportUnregistered: TButton
       AlignWithMargins = True
@@ -63,7 +60,6 @@ object FormMain: TFormMain
       Caption = 'btnImportUnregistered'
       TabOrder = 1
       OnClick = btnImportUnregisteredClick
-      ExplicitTop = 111
     end
     object btnListManager: TButton
       AlignWithMargins = True
@@ -72,10 +68,9 @@ object FormMain: TFormMain
       Width = 188
       Height = 25
       Align = alTop
-      Caption = 'btnListManager'
+      Caption = 'Zarz'#261'dzanie Listami'
       TabOrder = 2
       OnClick = btnListManagerClick
-      ExplicitTop = 80
     end
     object btnManageContacts: TButton
       AlignWithMargins = True
@@ -87,7 +82,6 @@ object FormMain: TFormMain
       Caption = 'Zarz'#261'dzanie Kontaktami'
       TabOrder = 3
       OnClick = btnManageContactsClick
-      ExplicitTop = 49
     end
     object btnCreateDatabase: TButton
       AlignWithMargins = True
@@ -100,7 +94,6 @@ object FormMain: TFormMain
       Caption = 'btnCreateDatabase'
       TabOrder = 4
       OnClick = btnCreateDatabaseClick
-      ExplicitTop = 157
     end
   end
   object pnMain: TPanel
@@ -443,7 +436,6 @@ object FormMain: TFormMain
       LookAndFeel.ScrollButtons.Arrow.Disabled.OutlineAlpha = 200
       Align = alTop
       TabOrder = 0
-      ExplicitWidth = 658
     end
   end
   object grboxConfiguration: TGroupBox
