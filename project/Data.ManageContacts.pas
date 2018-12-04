@@ -12,20 +12,32 @@ type
   TDataModuleManageContacts = class(TDataModule)
     dsContacts: TFDQuery;
   private
+    class var Module: TDataModuleManageContacts;
     { Private declarations }
   public
     { Public declarations }
+    class function GetDataModule: TDataModuleManageContacts;
   end;
 
-var
-  DataModuleManageContacts: TDataModuleManageContacts;
 
 implementation
 
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
-uses Data.Main;
+uses
+  Vcl.Forms,
+  Data.Main;
 
 {$R *.dfm}
+
+{ TDataModuleManageContacts }
+
+class function TDataModuleManageContacts.GetDataModule: TDataModuleManageContacts;
+begin
+  if not Assigned (Module) then
+    Module := TDataModuleManageContacts.Create(Application);
+  Result := Module
+
+end;
 
 end.

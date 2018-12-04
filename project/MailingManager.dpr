@@ -32,6 +32,5 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TFormMain, FormMain);
   Application.CreateForm(TDataModuleMain, DataModuleMain);
-  Application.CreateForm(TDataModuleManageContacts, DataModuleManageContacts);
   Application.Run;
 end.

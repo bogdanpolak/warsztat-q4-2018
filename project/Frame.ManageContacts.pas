@@ -59,11 +59,14 @@ begin
 end;
 
 procedure TFrameManageContacts.tmrFrameReadyTimer(Sender: TObject);
+var
+  dm: TDataModuleManageContacts;
 begin
   tmrFrameReady.Enabled := false;
-  DataSource1.DataSet := DataModuleManageContacts.dsContacts;
-  DataModuleManageContacts.dsContacts.Close();
-  DataModuleManageContacts.dsContacts.Open();
+  dm := TDataModuleManageContacts.GetDataModule;
+  DataSource1.DataSet := dm.dsContacts;
+  dm.dsContacts.Close();
+  dm.dsContacts.Open();
   DBGrid1.AutoSizeColumns();
 end;
 
