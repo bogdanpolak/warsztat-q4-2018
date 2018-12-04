@@ -477,7 +477,7 @@ object FormMain: TFormMain
       Left = 11
       Top = 116
       Width = 180
-      Height = 129
+      Height = 109
       Margins.Top = 6
       Align = alTop
       Caption = 'grboxAutoOpen'
@@ -547,6 +547,12 @@ object FormMain: TFormMain
     Interval = 50
     OnTimer = tmrIdleTimer
     Left = 288
+    Top = 64
+  end
+  object tmrAppReady: TTimer
+    Interval = 1
+    OnTimer = tmrAppReadyTimer
+    Left = 352
     Top = 64
   end
 end
