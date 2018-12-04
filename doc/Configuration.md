@@ -107,3 +107,17 @@
 	
 	* Okno Resources fo MailingManager.dproj powinno wyglądać tak:
 	![Naprawa błędu](./resources/errata-done.png)
+
+## Uzupełnienie (4 grudnia 2018)
+
+Zmiana edytora używanego przez `git.exe`. Domyślnie jest to vim.
+
+**Notepad** *(klasyczny notatnik Windows)*
+```sh
+git config --global core.editor C:\Windows\notepad.exe
+```
+
+**Notepad++** (trzeba najpierw zainstalować ten program)*
+```sh
+git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+```
