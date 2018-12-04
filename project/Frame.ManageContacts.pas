@@ -16,12 +16,14 @@ type
     btnShowUnregistred: TButton;
     btnRegisterAgain: TButton;
     tmrFrameReady: TTimer;
+    DataSource1: TDataSource;
     procedure btnConfirmContactClick(Sender: TObject);
     procedure btnUnregisterContactClick(Sender: TObject);
     procedure tmrFrameReadyTimer(Sender: TObject);
   private
   public
     constructor Create(AOwner: TComponent); override;
+    procedure RefreshContactsData;
   end;
 
 implementation
@@ -49,12 +51,18 @@ begin
 end;
 
 
+procedure TFrameManageContacts.RefreshContactsData();
+begin
+  DataSource1.DataSet.Close;
+  DataSource1.DataSet.Open;
+  DBGrid1.AutoSizeColumns();
+end;
 
 procedure TFrameManageContacts.tmrFrameReadyTimer(Sender: TObject);
 begin
   tmrFrameReady.Enabled := false;
-  DBGrid1.DataSource := TDataSource.Create(self);
-  DBGrid1.DataSource.DataSet := DataModuleManageContacts.dsContacts;
+  DataSource1.DataSet := DataModuleManageContacts.dsContacts;
+  DataModuleManageContacts.dsContacts.Close();
   DataModuleManageContacts.dsContacts.Open();
   DBGrid1.AutoSizeColumns();
 end;

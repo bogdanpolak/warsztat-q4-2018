@@ -68,6 +68,7 @@ object FrameManageContacts: TFrameManageContacts
     Width = 600
     Height = 352
     Align = alClient
+    DataSource = DataSource1
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -79,6 +80,10 @@ object FrameManageContacts: TFrameManageContacts
     Interval = 1
     OnTimer = tmrFrameReadyTimer
     Left = 32
+    Top = 112
+  end
+  object DataSource1: TDataSource
+    Left = 128
     Top = 112
   end
 end

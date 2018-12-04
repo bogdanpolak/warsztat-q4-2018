@@ -47,7 +47,7 @@ type
     procedure HideAllChildFrames(AParenControl: TWinControl);
     { Private declarations }
   public
-    { Public declarations }
+    isChanged: Boolean; // Lista kontaktów powinna zostać odświeżona (Contact List Need Be Refreshed)
   end;
 
 var
@@ -108,6 +108,8 @@ var
   tab: TChromeTab;
   frm: TFrameWelcome;
   msg1: string;
+  i: Integer;
+  obj: TObject;
 begin
   { TODO: Przebudować logikę metody. Jest zbyt skomplikowana i mało czytelna }
   tmr1 := (Sender as TTimer);
@@ -164,6 +166,16 @@ begin
       btnImportContacts.Click;
     if rbtFrameManageContacts.Checked then
       btnManageContacts.Click;
+  end;
+  if isChanged then
+  begin
+    isChanged := false;
+    for i := 0 to ChromeTabs1.Tabs.Count-1 do
+    begin
+      obj := TObject(ChromeTabs1.Tabs[i].Data);
+      if obj is TFrameManageContacts then
+        (obj as TFrameManageContacts).RefreshContactsData;
+    end;
   end;
 end;
 

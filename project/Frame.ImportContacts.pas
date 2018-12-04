@@ -63,7 +63,7 @@ implementation
 
 uses
   System.IOUtils, Dialog.ResolveImportConflicts, Consts.ContactsJson,
-  Data.Main;
+  Data.Main, Form.Main;
 
 procedure TFrameImport.btnLoadNewEmailsClick(Sender: TObject);
 var
@@ -150,6 +150,8 @@ begin
       else
         mtabEmails.Next;
     end;
+    // ------ Powiadomienie formatki głównej o zmianie listy kontaktów
+    Form.Main.FormMain.isChanged := true;
   except
     on E: Exception do
       { TODO: Brzydko pachnie! Wyciszam wszystkie wyjątki }
