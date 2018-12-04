@@ -1,6 +1,8 @@
-# Zostań Git-owcem
+# Nauka Git i GotHub
 
-### Repozytorium Git-a
+Podstawy dla uczestników warsztatów: Nowoczesne programowanie w Delphi.
+
+# Repozytorium Git-a
 
 ![Repozytorium Git](./../assets/images/g01-repozytorium.png)
 
@@ -20,9 +22,8 @@ Pozostałe kluczowe obiekty w repozytorium Git-a to wskaźniki. Jest ich kilka r
 
 * **etykieta (tag)** - nazwany wskaźnik rewizji, w odróżnieniu od gałęzi nie przesuwa się w momencie wprowadzenia zmian, czyli stale wskazuje wybraną rewizję. Można ja wykorzystać to wskazania numeru wersji projektu.
 
-***
 
-### Zdalne repozytorium
+# Zdalne repozytorium
 ![Zdalne repozytorium](./../assets/images/g02-zdalne.png)
 
 Git jest rozproszonym systemem wersjonowania kodu źródłowego, czyli programista zazwyczaj korzysta ze swojej własnej kopii repozytorium głównego. Lokalne repozytorium jest w pełni autonomiczną kopią repozytorium Git-a. Dzięki takiemu rozwiazaniu mozliwe jest zatwierdzanie zmian bez połączenia sieciowego (sieć lokalna lub sieć Internet). Repozytorium lokalne tworzone jest na dwa sposoby: 
@@ -31,24 +32,32 @@ Git jest rozproszonym systemem wersjonowania kodu źródłowego, czyli programis
 
 Zmiany umieszczone w repozytorium lokalnym można w każdym momencie zsynchronizować z repozytorium zdalnym wydając poleceni ```git push```
 
-***
 
-### Delphi i GitHub
+# Delphi i Git
 ![Delphi i GitHub](./../assets/images/g03-delphi-github.png)
 
 Środowisko Delphi zawiera integrację z Git-em nazywaną VersionInsight. Rozszerzenie to pozwala na wydawanie wielu poleceń git-a, choć w praktyce najlepiej sprawdza się w czasie dodawania zmian do repozytorium lokalnego
 
-***
+# Ignorowanie plików analizowanych przez Git
 
-### Fork na GitHub
-![Fork na GitHub](./../assets/images/g04-fork-github.png)
+Git sprawdza zawartość pliku `.gitignore`, który jest wykorzystywany w momencie rejestrowania zmian. Pomijane są wszystkie pliki zapisane w `.gitignore` (zapisujemy pełną nazwę pliku lub wzorzec do którego pasuje wiele plików). Ignorować można również katalogi.
 
-***
+**Pliki projektów**
 
-### PullRequest na GitHub
-![PullRequest na GitHub](./../assets/images/g05-pull-request-github.png)
+W przypadku projektów RAD Studio poza plikami binarnymi, które łatwo jest wykluczyć trudności powodują pliki projektu (`*.dproj` lub `*.cbproj`) oraz pliki grupy projektów. Są to pliki XML, które są automatycznie zapisywane przez środowisko i programista nie ma kontroli nad ich formatem i zawartością. Niestety środowisko potrafi znacznie zmodyfikować taki plik przy drobnej zmianie. Dlatego warto usuwać ten plik z systemu wersjonowania, z którego korzysta kilku programistów. Jednak nie zawsze jest to możliwe.
 
-### Symulatory Git-a
+Jeśli plik projektu musi być w repozytorium to warto zadbać o to, aby dodawać go tylko, gdy jest to konieczne, a nie przy każdej zmianie. Jednym z rozwiązań jest ręczne przełączanie flagi `Skip-worktree` dla tego pliku. Ustawienie tej flagi spowoduje pomijanie tego pliku, przy kolejnych rejestracjach zmian.
+
+* Ustawienie flagi `Skip-worktree` 
+```
+git update-index --skip-worktree Project1.cbproj
+```
+
+# Praca z gałęziami
+
+Dodatkowy artykuł opisujący pojęcie pracy na gałęziach w `git` (`branch`). [Czytaj artykuł](./WorkingWithBranches.md)
+
+# Symulatory Git-a
 
 Dwa przykłady z wielu (wystarczy poszukać):
 
@@ -61,3 +70,16 @@ Dwa przykłady z wielu (wystarczy poszukać):
   * [Visualizing Git](http://git-school.github.io/visualizing-git/)
   * Dokładne odwzorowanie rewizji w Git-cie
   * Symulacja repozytorium lokalnego i zdalnego (origin)
+
+
+***
+
+# GitHub
+
+Fork na GitHub
+![Fork na GitHub](./../assets/images/g04-fork-github.png)
+
+PullRequest na GitHub
+![PullRequest na GitHub](./../assets/images/g05-pull-request-github.png)
+
+
