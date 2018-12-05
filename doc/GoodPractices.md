@@ -12,7 +12,7 @@
     * Zostawiaj ślad po tym co robisz
     * Przy całodziennym kodowaniu - min. 10 rewizji (commit-ów)
     * Oznaczanie commit-ów do przeglądu
-* GitHub, GitLub, itd - opakowanie do Git-a
+* Git++ - rozszerzenia Git-a
     * GitHub, GitLab, etc.
     * Issues - zgłoszenia, dyskusje, koncepcje, cytaty kodu
     * Dokumentacja kodu - pliki `Markdown` (MD)
@@ -21,13 +21,14 @@
     * Wewnętrzne kompendium programistów
 * Przeglądy kodu źródłowego
     * Przeglądamy commit-y
-    * Jeden pisze drugi sprawdza
-    * Pair Programming - jedno z wymagań metodyki XP
+    * Jeden pisze drugi sprawdza (zmieniamy się)
+    * Pair Programming - jedno z wymagań metodyki Agile XP
 
 Zobacz także:
 
-* Praca z gałęziami w Git [zobacz artykuł](./WorkingWithBranches.md)
-* Issues w GitHub [zobacz artykuł](./ProjectManagment-GitHub.md)
+* [Nauka Git-a](./GitLearn.md)
+* [Praca z gałęziami w Git](./WorkingWithBranches.md)
+* [Issues w GitHub](./ProjectManagment-GitHub.md)
 
 # Czysty kod
 
@@ -36,17 +37,22 @@ Zobacz także:
     * Czysty kod wujka Bob-a
     * Wiele inspirujących książek i blogów
 * Nie naśladuj ślepo
+* Pomyślcie o automatycznym formatowaniu kodu
+    * Może jednak domyślne ustawienia formatera dostępnego w RAD Studio są możliwe do przyjęcia?
 * Lepiej mniej zasad stosowanych przez wszystkich
 * Presja czasu
     * Często musisz iść na skróty
     * Zostaw ślad - TODO w kodzie 
 
-Wujek Bob - Robert C. Martin
-    * Doświadczony programista
-    * Mentor i trener
-    * Doradca w wielu firmach programistycznych
-    * Współautor Agile Manifesto
-        * W 2001 r. 17 programistów spotkało się w ośrodku w Snowbird (Rocky Mountains, Salt Lake County), aby omówić te lekkie metody budowy systemów informatycznych, między innymi Kent Beck, Ward Cunningham, Jeff Sutherland, Ken Schwaber, Jim Highsmith, Alistair Cockburn i Bob Martin. Wspólnie opublikowali Agile Manifesto. 
+**Wujek Bob - Robert C. Martin**
+
+* Doświadczony programista
+* Mentor i trener
+* Doradca w wielu firmach programistycznych
+* Współautor Agile Manifesto
+    * 2001, ośrodku w Snowbird (Rocky Mountains, Salt Lake County)
+    * 17 programistów, między innymi Kent Beck, Ward Cunningham, Jeff Sutherland, Ken Schwaber, Jim Highsmith, Alistair Cockburn i Bob Martin
+    * Omawiali nowe metody projektowania i budowy systemów informatycznych, nazywane zwinne (agile)
 
 Zobacz także:
 
@@ -72,11 +78,14 @@ Zobacz także:
 
 Nie programuj zawsze w ten sam sposób. Ucz się i eksperymentuj z nowymi sposobami kodowania.  Naucz się rozpoznawać zapachy kodu: kiedy śmierdzi, a kiedy ma miły zapach.
 
-Polecam:
-* Książka: Refactoring - Improving the Design of Existing Code
+Warto przeczytać:
+
+* Refactoring - Improving the Design of Existing Code
    * autorzy: Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts, Erich Gamma
    * [Tłumaczenie na polski (Helion)](https://helion.pl/ksiazki/refaktoryzacja-ulepszanie-struktury-istniejacego-kodu-martin-fowler-kent-beck-john-brant-william-opdy,refukv.htm)
-
+* Clean Code: A Handbook of Agile Software Craftsmanship
+    * autor: Robert C. Martin
+    * [Tłumaczenie na polski (Helion)](https://helion.pl/ksiazki/czysty-kod-podrecznik-dobrego-programisty-robert-c-martin,czykov.htm)
 
 # Solidny kod
 
@@ -89,6 +98,15 @@ Polecam:
 * Inspiracje
     * Prawo Demeter
     * S.O.L.I.D.
+
+**Architekt na pokładzie**
+
+Warto zająć się solidnym kodem od samego początku. Budowanie jednolitych praktyk jest jednak trudniejsze niż budowanie zasad czystego kodu, gdzie szybciej można znaleźć wspólne zasady. W przypadku projektowania solidnego kodu konieczny będzie architekt, który przekona (zachęci) resztę zespołu do swoich rozwiązań, ale równocześnie to osoba, która będzie otwarta na rozwiązania alternatywne lub uproszczone.
+
+Zobacz także:
+
+* Zasady S.O.L.I.D. [zobacz artykuł](/RobertMartinSOLIDPrinceples.md)
+* Prawo Demeter [prezentacja na slideshare.net](https://www.slideshare.net/vladimirtsukur/law-of-demeter-objective-sense-of-style)
 
 # Kod pokryty testami
 
@@ -112,44 +130,4 @@ TBD
         1. Piszę prosty test
         2. Piszę kod spełniający ten test
         3. Refaktoryzuję kod test i kod produkcyjny
-
-### Zasady S.O.L.I.D.
-
-![(c) Mohit Rajput - mohitrajput987 Apr 30 '17 https://dev.to/mohitrajput987/coding-best-practices-part-1-naming-conventions--class-designing-principles](https://res.cloudinary.com/practicaldev/image/fetch/s--VIyIhNNs--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://s11.postimg.org/r5n293c4z/SOLID.jpg)
-
-1. SRP = Single Responsibility Principle
-    * Klasa powinna być odpowidzialna za jedną rzecz
-2. OCP = Open/Close Principle
-    * Klasa musi być otwarta na rozbudowę, ale zamknięta na poprawę dobrego kodu
-    * Podejrzane: wielopoziomowe if-ów / casów
-    * Rozwiązania OOP: abstrakcja, polimorfizm, fabryki
-    * Użycie wzorca Fabryki Abstrakcyjnej
-        * dostęp do wielu fabryk przez jeden interfejs (klasę abstrakcyjną)
-        * dostęp do wyprodukowanych obiektów przez wspólny interfejs lub klasę abstrakcyjną
-        * [przykład w C++](https://sourcemaking.com/design_patterns/abstract_factory/cpp/before-after)
-        * [przykład w C# / Java](https://refactoring.guru/design-patterns/abstract-factory)
-        * [przykład w Delphi](https://www.devfields.com/design-patterns-abstract-factory-pattern/)
-3. LSP = Liskov Substition Principle
-    * Poprawnie zbudowane drzewo dziedziczenia nie wymaga nadpisywania metod ojca, w celu poprawnego działania algorytmu
-    * ```TKwadrat != class(TProstokąt)```
-        * zobacz jak działa metoda WyliczPole
-    * poprawnie: 
-        ```
-        TKwadrat = class(TFigure)
-        TProstokąt = class(TFigure)
-        ```
-4. ISP = Interface Segreation Principle
-    * Podziel interfejsy na mniejsze (spójne dziedzinowo)
-5. DIP = Dependency Invertion Principle
-    * Klasy z dwóch różnych warstw separuj interfejsami
-    * Przykład: Klasy dziedzinowe (realizujące funkcjonalność) oraz klasy składujące dane (zbiory danych).
-    * Jeśli klasa warstwy wyższej tworzy obiekty warstwy niższej to można zastosować: IoC = Inversion of Control
-    * Trzech muszkieterów: DIP, IoC, DI (Dependency Injection)
-
-### Prawo Demeter
-
-LoD = Law of Demeter
-
-[Prezentacja na slideshare.net](https://www.slideshare.net/vladimirtsukur/law-of-demeter-objective-sense-of-style)
-
 
