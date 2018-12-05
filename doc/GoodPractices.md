@@ -1,5 +1,99 @@
 # Dobre praktyki programowania
 
+1. Praca zespołowa [czytaj](#praca-zespołowa)
+2. Czysty kod [czytaj](#czysty-kod)
+3. Solidny kod [czytaj](#solidny-kod)
+4. Kod pokryty testami [czytaj](#kod-pokryty-testami)
+
+# Praca zespołowa
+
+* Git - wspólne repozytorium
+    * Dokumentowanie historii zmian
+    * Zostawiaj ślad po tym co robisz
+    * Przy całodziennym kodowaniu - min. 10 rewizji (commit-ów)
+    * Oznaczanie commit-ów do przeglądu
+* GitHub, GitLub, itd - opakowanie do Git-a
+    * GitHub, GitLab, etc.
+    * Issues - zgłoszenia, dyskusje, koncepcje, cytaty kodu
+    * Dokumentacja kodu - pliki `Markdown` (MD)
+    * Strony Wiki - dynamiczne dokumenty np. status, roadmap, robocze dokumenty
+    * Tylko dla zespołu programistycznego
+    * Wewnętrzne kompendium programistów
+* Przeglądy kodu źródłowego
+    * Przeglądamy commit-y
+    * Jeden pisze drugi sprawdza
+    * Pair Programming - jedno z wymagań metodyki XP
+
+Zobacz także:
+
+* Praca z gałęziami w Git [zobacz artykuł](./WorkingWithBranches.md)
+* Issues w GitHub [zobacz artykuł](./ProjectManagment-GitHub.md)
+
+# Czysty kod
+
+* Zasady ustalone przez zespół
+* Nie odrywaj koła na nowo
+    * Czysty kod wujka Bob-a
+    * Wiele inspirujących książek i blogów
+* Nie naśladuj ślepo
+* Lepiej mniej zasad stosowanych przez wszystkich
+* Presja czasu
+    * Często musisz iść na skróty
+    * Zostaw ślad - TODO w kodzie 
+
+Wujek Bob - Robert C. Martin
+    * Doświadczony programista
+    * Mentor i trener
+    * Doradca w wielu firmach programistycznych
+    * Współautor Agile Manifesto
+        * W 2001 r. 17 programistów spotkało się w ośrodku w Snowbird (Rocky Mountains, Salt Lake County), aby omówić te lekkie metody budowy systemów informatycznych, między innymi Kent Beck, Ward Cunningham, Jeff Sutherland, Ken Schwaber, Jim Highsmith, Alistair Cockburn i Bob Martin. Wspólnie opublikowali Agile Manifesto. 
+
+Zobacz także:
+
+* Przykładowa konwencja nadawania nazw [zobacz artykuł](./NamingConvetion.md)
+    * Naming Convention
+    * Code Style Guide
+* Czysty kod wg wujka Bob-a [zobacz artykuł](./RobertMartinCleanCode.md)
+
+**DRY - `Don't Repeat Yourself`**
+
+* Unikaj kopiuj-wklej
+* Uogólniaj rozwiązanie
+    * zamiast: zmienna1, zmienna2, zmienna3
+    * tablica lub lista
+    * odnajduj podobne wzorce i buduj reużywalne moduły
+* W metodach używaj mniej niż 5 wyrażeń warunkowych IF / WHILE
+    * szczególnie gdy niewiele się różnią zarówno pod kątem warunku, jak i tego co jest wykonywane jeśli warunek jest prawdziwy
+* Separacja logiki
+    * Wydzielaj logikę na zewnątrz (do klasy lub przynajmniej do funkcji)
+    * Staraj się wstrzykiwać wszelkie zależności do klasy (Prawo Demeter)
+
+**Złe zapachy kodu**
+
+Nie programuj zawsze w ten sam sposób. Ucz się i eksperymentuj z nowymi sposobami kodowania.  Naucz się rozpoznawać zapachy kodu: kiedy śmierdzi, a kiedy ma miły zapach.
+
+Polecam:
+* Książka: Refactoring - Improving the Design of Existing Code
+   * autorzy: Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts, Erich Gamma
+   * [Tłumaczenie na polski (Helion)](https://helion.pl/ksiazki/refaktoryzacja-ulepszanie-struktury-istniejacego-kodu-martin-fowler-kent-beck-john-brant-william-opdy,refukv.htm)
+
+
+# Solidny kod
+
+* Dobre praktyki
+* MVC
+* Separacja warstw
+* Częste używanie interfejsów
+* Praktyki opracowane i spisane przez zespół
+* Gotowce traktuj jako wskazówki (nie rób kopuj-wklej)
+* Inspiracje
+    * Prawo Demeter
+    * S.O.L.I.D.
+
+# Kod pokryty testami
+
+TBD
+
 ### Testowanie
 
 * Testuj kod często
@@ -19,155 +113,7 @@
         2. Piszę kod spełniający ten test
         3. Refaktoryzuję kod test i kod produkcyjny
 
-### Praca zespołowa
-
-* Przeglądy kodu źródłowego
-    * Na początek "na żywo" - spotkanie w jednej sali
-    * Docelowo - off-line
-* Sprawdźcie pracę parami
-    * Pair Programming - jedno z wymagań metodyki XP
-* Zostawiajcie ślad po tym co zrobiliście
-    * Wspólne repozytorium
-    * Przy całodziennym kodowaniu - min. 10 rewizji (commit-ów)
-
-### DRY
-
-DRY - Don't Repeat Yourself
-
-* Unikaj kopiuj-wklej
-* Uogólniaj rozwiązanie
-    * zamiast: zmienna1, zmienna2, zmienna3
-    * tablica lub lista
-    * odnajduj podobne wzorce i buduj reużywalne moduły
-* W metodach używaj mniej niż 5 wyrażeń warunkowych IF / WHILE
-    * szczególnie gdy niewiele się różnią zarówno pod kątem warunku, jak i tego co jest wykonywane jeśli warunek jest prawdziwy
-* Separacja logiki
-    * Wydzielaj logikę na zewnątrz (do klasy lub przynajmniej do funkcji)
-    * Staraj się wstrzykiwać wszelkie zależności do klasy (Prawo Demeter)
-
-### Zapachy kodu
-
-Nie programuj zawsze w ten sam sposób. Ucz się i eksperymentuj z nowymi sposobami kodowania.  Naucz się rozpoznawać zapachy kodu: kiedy śmierdzi, a kiedy ma miły zapach.
-
-Polecam:
-* Książka: Refactoring - Improving the Design of Existing Code
-   * autorzy: Martin Fowler, Kent Beck, John Brant, William Opdyke, Don Roberts, Erich Gamma
-   * [Tłumaczenie na polski (Helion)](https://helion.pl/ksiazki/refaktoryzacja-ulepszanie-struktury-istniejacego-kodu-martin-fowler-kent-beck-john-brant-william-opdy,refukv.htm)
-
-### Czysty kod wg wujka Bob-a
-
-> Czysty kod w JavaScript
-> Tłumaczenie na polski wraz z ciekawymi przykładami
-> [Zobacz tutaj](https://github.com/greg-dev/clean-code-javascript-pl)
-
-| Klucz | Treść |
-| - | - |
-| Tytuł | Czysty kod. Podręcznik dobrego programisty |
-| Autor | [Robert C. Martin](https://en.wikipedia.org/wiki/Robert_C._Martin) |
-| Wydawnictwo | Helion, [link do książki na stronie helion.pl](https://helion.pl/ksiazki/czysty-kod-podrecznik-dobrego-programisty-robert-c-martin,czykov.htm#section7_shift) |
-| Tytuł oryginału | Clean Code: A Handbook of Agile Software Craftsmanship |
-
-* Rozdział 2. Znaczące nazwy
-    * Używaj nazw przedstawiających intencje
-    * Unikanie dezinformacji
-    * Tworzenie wyraźnych różnic
-    * Tworzenie nazw, które można wymówić
-    * Korzystanie z nazw łatwych do wyszukania
-    * Unikanie wpisywania całych nazw: notacja węgierska, przedrostki składników
-    * Nazywanie interfejsów i implementacji
-    * Unikanie odwzorowania mentalnego (nie nazywaj zmiennej tekstowej i)
-    * Nazwy klas (TFoo)
-    * Nazwy metod (Z dużej litery)
-    * Nie bądź dowcipny
-    * Wybieraj jedno słowo na pojęcie (Słownik pojęciowy)
-    * Nie twórz kalamburów!
-    * Korzystanie z nazw dziedziny
-    * Dodanie znaczącego kontekstu (pełna nazwa to nazwa klasy i nazwa metody)
-    * Nie należy dodawać nadmiarowego kontekstu (nie powtarzaj kontekstu klasy w nazwie metody)
-* Rozdział 3. Funkcje
-    * Małe funkcje!
-    * Bloki i wcięcia
-    * Wykonuj jedną czynność
-    * Sekcje wewnątrz funkcji
-    * Jeden poziom abstrakcji w funkcji
-    * Czytanie kodu od góry do dołu zasada zstępująca
-    * Instrukcje switch
-    * Korzystanie z nazw opisowych
-    * Argumenty funkcji
-    * Często stosowane funkcje jednoargumentowe
-    * Funkcje dwuargumentowe
-    * Funkcje trzyargumentowe
-    * Argumenty obiektowe (OK)
-    * Listy argumentów
-    * Czasowniki i słowa kluczowe
-    * Unikanie efektów ubocznych
-    * Rozdzielanie poleceń i zapytań
-    * Stosowanie wyjątków zamiast zwracania kodów błędów
-    * Wyodrębnienie bloków try-catch
-    * Obsługa błędów jest jedną operacją
-* Rozdział 4. Komentarze
-    * Komentarze nie są szminką dla złego kodu
-    * Czytelny kod nie wymaga komentarzy
-    * Dobre komentarze
-    * Komentarze prawne
-    * Komentarze informacyjne
-    * Wyjaśnianie zamierzeń
-    * Ostrzeżenia o konsekwencjach
-    * Komentarze TODO
-    * Wzmocnienie
-    * Komentarze Javadoc w publicznym API
-    * Nie używaj komentarzy, jeżeli można użyć funkcji lub zmiennej
-    * Zakomentowany kod
-    * Nadmiar informacji
-    * Nieoczywiste połączenia
-* Rozdział 5. Formatowanie
-    * Przeznaczenie formatowania
-    * Formatowanie pionowe
-    * Metafora gazety
-    * Pionowe odstępy pomiędzy segmentami kodu
-    * Gęstość pionowa
-    * Odległość pionowa
-    * Wcięcia
-    * Zasady zespołowe
-    * Zasady formatowania wujka Boba
-* Rozdział 6. Obiekty i struktury danych
-    * Abstrakcja danych
-    * Antysymetria danych i obiektów
-    * Prawo Demeter
-    * Obiekty transferu danych (Active Record)
-* Rozdział 7. Obsługa błędów
-    * Użycie wyjątków zamiast kodów powrotu
-    * Rozpoczynanie od pisania instrukcji try-catch-finally
-    * Użycie niekontrolowanych wyjątków
-    * Dostarczanie kontekstu za pomocą wyjątków
-    * Definiowanie klas wyjątków w zależności od potrzeb wywołującego
-    * Definiowanie normalnego przepływu
-    * Nie zwracamy null
-    * Nie przekazujemy null
-* Rozdział 9. Testy jednostkowe
-    * Trzy prawa TDD
-    * ...
-* Rozdział 10. Klasy
-    * Organizacja klas
-        * Hermetyzacja
-    * Klasy powinny być małe!
-        * Zasada pojedynczej odpowiedzialności
-        * Spójność
-        * Utrzymywanie spójności powoduje powstanie wielu małych klas
-    * Organizowanie zmian
-        * Izolowanie modułów kodu przed zmianami
-* Rozdział 11. Systemy
-    * Jak budowałbyś miasto?
-    * Oddzielenie konstruowania systemu od jego używania
-        * Wydzielenie modułu main
-        * Fabryki
-        * Wstrzykiwanie zależności
-    * Testowanie architektury systemu
-* Rozdział 17. Zapachy kodu i heurystyki
-    * ...
-
-
-### Zasady SOLID
+### Zasady S.O.L.I.D.
 
 ![(c) Mohit Rajput - mohitrajput987 Apr 30 '17 https://dev.to/mohitrajput987/coding-best-practices-part-1-naming-conventions--class-designing-principles](https://res.cloudinary.com/practicaldev/image/fetch/s--VIyIhNNs--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://s11.postimg.org/r5n293c4z/SOLID.jpg)
 
