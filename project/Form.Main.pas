@@ -236,7 +236,11 @@ begin
     obj := TObject(ATab.Data);
     if (TabChangeType = tcActivated) and Assigned(obj) then
     begin
+      pnMain.HideAllChildFrames();
+
       HideAllChildFrames(pnMain);
+
+
       (obj as TFrame).Visible := True;
     end;
   end;

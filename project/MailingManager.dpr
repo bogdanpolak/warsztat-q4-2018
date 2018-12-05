@@ -23,7 +23,8 @@ uses
   Dialog.CreateDatabaseStructure in 'database-build\Dialog.CreateDatabaseStructure.pas' {FormDBScript},
   Consts.DDL.Interbase in 'database-build\Consts.DDL.Interbase.pas',
   Helper.DBGrid in 'Helper.DBGrid.pas',
-  Frame.ListManager in 'Frame.ListManager.pas' {FrameListManager: TFrame};
+  Frame.ListManager in 'Frame.ListManager.pas' {FrameListManager: TFrame},
+  Helper.WinControl in 'Helper.WinControl.pas';
 
 {$R *.res}
 

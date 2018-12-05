@@ -436,6 +436,8 @@ object FormMain: TFormMain
       LookAndFeel.ScrollButtons.Arrow.Disabled.OutlineAlpha = 200
       Align = alTop
       TabOrder = 0
+      ExplicitLeft = 0
+      ExplicitTop = 3
     end
   end
   object grboxConfiguration: TGroupBox
