@@ -30,7 +30,8 @@ implementation
 
 {$R *.dfm}
 
-uses Data.ManageContacts, Helper.DBGrid;
+uses Data.ManageContacts, Helper.DBGrid, System.Messaging,
+  Notification.Messages;
 
 { TFrameManageContacts }
 
@@ -68,6 +69,12 @@ begin
   dm.dsContacts.Close();
   dm.dsContacts.Open();
   DBGrid1.AutoSizeColumns();
+  TMessageManager.DefaultManager.SubscribeToMessage(
+    TMessage<TMsgRefreshContactList>,
+    procedure(const Sender: TObject; const M: TMessage)
+    begin
+      RefreshContactsData;
+    end);
 end;
 
 end.

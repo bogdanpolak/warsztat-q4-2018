@@ -53,6 +53,7 @@ type
     procedure tmrFrameShowTimer(Sender: TObject);
   private
     procedure myAddRowToImportTable(joEmailRow: TJSONObject);
+    procedure NotifyFramesToRefreshContactList();
   public
     constructor Create(AOwner: TComponent); override;
   end;
@@ -63,7 +64,7 @@ implementation
 
 uses
   System.IOUtils, Dialog.ResolveImportConflicts, Consts.ContactsJson,
-  Data.Main, Form.Main, System.UITypes;
+  Data.Main, Form.Main, System.UITypes, System.Messaging, Notification.Messages;
 
 procedure TFrameImport.btnLoadNewEmailsClick(Sender: TObject);
 var
@@ -148,8 +149,7 @@ begin
       else
         mtabEmails.Next;
     end;
-    // ------ Powiadomienie formatki głównej o zmianie listy kontaktów
-    Form.Main.FormMain.isChanged := true;
+    NotifyFramesToRefreshContactList ();
   except
     on E: Exception do
       { TODO: Brzydko pachnie! Wyciszam wszystkie wyjątki }
@@ -194,6 +194,12 @@ begin
       (mtabEmailsCompany.Value <> dsQueryCurrEmailsCOMPANY.Value);
   end;
   mtabEmails.Post;
+end;
+
+procedure TFrameImport.NotifyFramesToRefreshContactList;
+begin
+  System.Messaging.TMessageManager.DefaultManager.SendMessage(Self,
+      TMessage<TMsgRefreshContactList>.Create(TMsgRefreshContactList.Create));
 end;
 
 procedure TFrameImport.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;

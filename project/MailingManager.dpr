@@ -24,7 +24,8 @@ uses
   Consts.DDL.Interbase in 'database-build\Consts.DDL.Interbase.pas',
   Helper.DBGrid in 'Helper.DBGrid.pas',
   Frame.ListManager in 'Frame.ListManager.pas' {FrameListManager: TFrame},
-  Helper.WinControl in 'Helper.WinControl.pas';
+  Helper.WinControl in 'Helper.WinControl.pas',
+  Notification.Messages in 'Notification.Messages.pas';
 
 {$R *.res}
 

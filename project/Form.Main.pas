@@ -53,8 +53,6 @@ type
     procedure AutoOpenFrameInDeveloperMode;
     { Private declarations }
   public
-    isChanged: Boolean;
-    // Lista kontaktów powinna zostać odświeżona (Contact List Need Be Refreshed)
   end;
 
 var
@@ -158,21 +156,8 @@ begin
 end;
 
 procedure TFormMain.tmrIdleTimer(Sender: TObject);
-var
-  i: Integer;
-  obj: TObject;
 begin
   tmrIdle.Tag := tmrIdle.Tag + 1;
-  if isChanged then
-  begin
-    isChanged := False;
-    for i := 0 to ChromeTabs1.Tabs.Count - 1 do
-    begin
-      obj := TObject(ChromeTabs1.Tabs[i].Data);
-      if obj is TFrameManageContacts then
-        (obj as TFrameManageContacts).RefreshContactsData;
-    end;
-  end;
 end;
 
 procedure TFormMain.btnManageContactsClick(Sender: TObject);
