@@ -64,9 +64,6 @@ const
 
 procedure TFormDBScript.BitBtn1Click(Sender: TObject);
 var
-  isMSSQL: boolean;
-  isORACLE: boolean;
-  isMySQL: boolean;
   isExecutedWithoutErros: boolean;
   sc: TFDSQLScript;
   i: integer;
@@ -147,8 +144,8 @@ var
   form: TFormDBScript;
   mr: integer;
 begin
+  form := TFormDBScript.Create(Application);
   try
-    form := TFormDBScript.Create(Application);
     mr := form.ShowModal;
     Result := (mr = mrOK);
   finally
@@ -164,10 +161,6 @@ end;
 
 procedure TFormDBScript.FormShow(Sender: TObject);
 var
-  isMSSQL: boolean;
-  isORACLE: boolean;
-  isMySQL: boolean;
-  sc: TFDSQLScript;
   conn: TFDConnection;
 begin
   memScript.Lines.Text := IB_SCRIPT;
@@ -176,9 +169,6 @@ begin
   Memo1.Clear;
   Memo1.Lines.Add('Connected using: ' + conn.ConnectionDefName);
   Memo1.Lines.Add('driver: ' + conn.DriverName);
-  isMSSQL := (conn.RDBMSKind = TFDRDBMSKinds.MSSQL);
-  isORACLE := (conn.RDBMSKind = TFDRDBMSKinds.Oracle);
-  isMySQL := (conn.RDBMSKind = TFDRDBMSKinds.MySQL);
 end;
 
 end.

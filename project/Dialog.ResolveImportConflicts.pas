@@ -42,8 +42,8 @@ var
   frm: TDialogResolveConflicts;
   mr: Integer;
 begin
+  frm := TDialogResolveConflicts.Create(Application);
   try
-    frm := TDialogResolveConflicts.Create(Application);
     frm.DataSource1.DataSet := (FrameImportContacts as TFrameImport).mtabEmails;
     mr := frm.ShowModal;
     Result := (mr = mrOK);

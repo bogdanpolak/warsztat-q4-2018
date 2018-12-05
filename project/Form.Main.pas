@@ -46,7 +46,6 @@ type
     procedure tmrAppReadyTimer(Sender: TObject);
   private
     isDeveloperMode: Boolean;
-    procedure HideAllChildFrames(AParenControl: TWinControl);
     function OpenFrameAsChromeTab(FrameClass: TFrameClass;
       const TabCaption: String): TChromeTab;
     procedure OpenDatabaseConnection;
@@ -68,7 +67,8 @@ implementation
 uses
   FireDAC.Stan.Error,
   Data.Main, Frame.ImportContacts, Frame.Welcome,
-  Frame.ManageContacts, Dialog.CreateDatabaseStructure, Frame.ListManager;
+  Frame.ManageContacts, Dialog.CreateDatabaseStructure, Frame.ListManager,
+  Helper.WinControl;
 
 const
   SQL_SELECT_DatabaseVersion = 'SELECT versionnr FROM DBInfo';
@@ -78,22 +78,13 @@ resourcestring
   SDatabaseRequireUpgrade =
     'Proszę najpierw uruchomić skrypt budujący struktury bazy danych.';
 
-procedure TFormMain.HideAllChildFrames(AParenControl: TWinControl);
-var
-  i: Integer;
-begin
-  for i := AParenControl.ControlCount - 1 downto 0 do
-    if AParenControl.Controls[i] is TFrame then
-      (AParenControl.Controls[i] as TFrame).Visible := False;
-end;
-
 function TFormMain.OpenFrameAsChromeTab(FrameClass: TFrameClass;
   const TabCaption: String): TChromeTab;
 var
   frm: TFrame;
   tab: TChromeTab;
 begin
-  HideAllChildFrames(pnMain);
+  pnMain.HideAllChildFrames();
   frm := FrameClass.Create(pnMain);
   frm.Parent := pnMain;
   frm.Visible := True;
@@ -101,6 +92,7 @@ begin
   tab := ChromeTabs1.Tabs.Add;
   tab.Data := frm;
   tab.Caption := TabCaption;
+  Result := tab;
 end;
 
 procedure TFormMain.OpenDatabaseConnection;
@@ -237,10 +229,6 @@ begin
     if (TabChangeType = tcActivated) and Assigned(obj) then
     begin
       pnMain.HideAllChildFrames();
-
-      HideAllChildFrames(pnMain);
-
-
       (obj as TFrame).Visible := True;
     end;
   end;

@@ -3,7 +3,7 @@
 interface
 
 // TODO: wyłączenie Warninig-ów W1002 Symbol %s is specific to a platform
-// {$WARN SYMBOL_PLATFORM OFF}
+{$WARN SYMBOL_PLATFORM OFF}
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
@@ -63,7 +63,7 @@ implementation
 
 uses
   System.IOUtils, Dialog.ResolveImportConflicts, Consts.ContactsJson,
-  Data.Main, Form.Main;
+  Data.Main, Form.Main, System.UITypes;
 
 procedure TFrameImport.btnLoadNewEmailsClick(Sender: TObject);
 var
@@ -71,8 +71,6 @@ var
   jData: TJSONArray;
   s: string;
   i: Integer;
-  jObj: TJSONObject;
-  email: string;
 begin
   if FileOpenDialog1.Execute then
   begin
@@ -257,7 +255,6 @@ var
   isDeveloperMode: Boolean;
   jData: TJSONArray;
   i: Integer;
-  joEmailRow: TJSONObject;
 begin
   tmrFrameShow.Enabled := False;
 {$IFDEF DEBUG}
